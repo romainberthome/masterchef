@@ -1,16 +1,10 @@
-var mongoose = require("mongoose"),
-    passportLocalMongoose = require("passport-local-mongoose");
+var mongoose = require("mongoose");
     
 var ReceipeSchema = new mongoose.Schema({
     title: String,
     picture: String,
     quantity: String,
-    ingredients:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"I"
-        }
-    ],
+    ingredients:[String],
     stores:[
         {
             type:mongoose.Schema.Types.ObjectId,
@@ -80,7 +74,5 @@ var ReceipeSchema = new mongoose.Schema({
         }
     }
 });
-
-ReceipeSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("Receipe", ReceipeSchema);

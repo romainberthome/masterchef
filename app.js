@@ -5,9 +5,15 @@ var express = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose"),
+    mongooseQuerryRandom = require('mongoose-query-random'),
+    CronJob = require('cron').CronJob,
     methodOverride = require("method-override");
 
-var User = require("./models/user");
+var receipeRoutes = require("./routes/receipe"),
+    apiRoutes = require('./routes/api');
+
+var User = require("./models/user"),
+    Receipe = require("./models/receipe");
 
 
 var url = process.env.DATABASEURL || "mongodb://localhost/masterchef" ; 
@@ -27,8 +33,14 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.get('/', function(req, res){
-    res.render('backend/receipe/new');
+    res.render('backend/home');
 });
+
+
+
+
+app.use("/",receipeRoutes);
+app.use('/',apiRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server Started");

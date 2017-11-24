@@ -4,83 +4,83 @@
     <div class="row">
         <h1 style="text-align:center;">Create a new receipe</h1>
         <div style="width:30%; margin: 25px auto;">
-            <form action="/receipe" method="POST">
+            <form action="/receipe/<%= receipes._id %>?_method=PUT"  method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="title" name="title">
+                    <input type="text" class="form-control" value="<%= receipes.title %>" name="title">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="picture" name="picture">
+                    <input type="text" class="form-control" value="<%= receipes.picture %>" name="picture">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="quantity" name="quantity">
+                    <input type="text" class="form-control" value="<%= receipes.quantity %>" name="quantity">
                 </div>
                 <label>Ingredients</label>
                 <div class="form-group">
-                    <textarea class="form-control" placeholder="ingredients" name="ingredients" rows="3"></textarea>
+                    <textarea class="form-control" value="<%= receipes.ingredients %>" name="ingredients" rows="3"></textarea>
                 </div>
                 <label>Step 1</label>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">img</span>
-                    <input type="text" class="form-control" placeholder="Step one image" name="steps[one][img]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.one.image %>" name="steps[one][img]">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">title</span>
-                    <input type="text" class="form-control" placeholder="Step one title" name="steps[one][title]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.one.title %>" name="steps[one][title]">
                     </div>
                 </div>
                 <label>Step 2</label>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">img</span>
-                    <input type="text" class="form-control" placeholder="Step two image" name="steps[two][img]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.two.image %>" name="steps[two][img]">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">title</span>
-                    <input type="text" class="form-control" placeholder="Step two title" name="steps[two][title]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.two.title %>" name="steps[two][title]">
                     </div>
                 </div>
                 <label>Step 3</label>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">img</span>
-                    <input type="text" class="form-control" placeholder="Step three image" name="steps[three][img]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.three.image %>" name="steps[three][img]">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">title</span>
-                    <input type="text" class="form-control" placeholder="Step three title" name="steps[three][title]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.three.title %>" name="steps[three][title]">
                     </div>
                 </div>
                 <label>Step 4</label>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">img</span>
-                    <input type="text" class="form-control" placeholder="Step five image" name="steps[four][img]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.four.image %>" name="steps[four][img]">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">title</span>
-                    <input type="text" class="form-control" placeholder="Step five title" name="steps[four][title]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.four.title %>" name="steps[four][title]">
                     </div>
                 </div>
                 <label>Step 5</label>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">img</span>
-                    <input type="text" class="form-control" placeholder="Troisieme" name="steps[five][img]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.five.image %>" name="steps[five][img]">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">title</span>
-                    <input type="text" class="form-control" placeholder="Quatrieme" name="steps[five][title]">
+                    <input type="text" class="form-control" value="<%= receipes.steps.five.title %>" name="steps[five][title]">
                     </div>
                 </div>
                 <div class="form-group">

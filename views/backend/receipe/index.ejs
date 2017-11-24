@@ -1,0 +1,14 @@
+<% include ../../partials/header %>
+
+<div class="row">
+    <h1 style="text-align:center;">List of receipe in API</h1>
+    <div style="width:80%; margin: 25px auto;">
+        <div class="list-group">
+            <% receipes.forEach(function(receipes){%>
+            <a href="receipe/<%= receipes.id %>" class="list-group-item list-group-item-action"><%= receipes.title %></a>
+             <% }) %>
+        </div>
+    </div>
+</div>
+
+<% include ../../partials/footer %>

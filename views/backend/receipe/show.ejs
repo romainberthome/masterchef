@@ -1,0 +1,22 @@
+<% include ../../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= receipes.picture%>"></img>
+                <div class="caption-full">
+                    <h4><a><%= receipes.title %></a></h4>
+                    <p><%- receipes.ingredients %></p>
+                    <a class="btn btn-warning" href="/receipe/<%= receipes._id %>/edit">Edit</a>
+                    <form id="delete-form" action="/receipe/<%= receipes._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Suprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ../../partials/footer %>
